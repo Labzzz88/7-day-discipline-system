@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-Day No-Motivation Discipline System | Build Consistency in 1 Week</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a; --white: #ffffff; --cream: #faf8f4;
+      --gold: #f5a623; --gold-dk: #d4861a; --green: #1db954;
+      --red: #e53e3e; --gray: #6b7280; --border: #e5e7eb; --card: #ffffff;
+      --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--cream); color: var(--black); line-height: 1.6; overflow-x: hidden; }
+
+    /* HERO */
+    .hero { background: var(--black); color: var(--white); position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px 60px; display: grid; grid-template-columns: 1fr 320px; gap: 60px; align-items: center; position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.4); color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; }
+    .hero h1 { font-family: var(--font-head); font-size: clamp(1.9rem, 4.5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.02em; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 500px; margin-bottom: 36px; line-height: 1.7; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--black); font-family: var(--font-head); font-size: 1rem; font-weight: 700; padding: 16px 32px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.15s; letter-spacing: 0.01em; }
+    .hero-cta:hover { background: var(--gold-dk); transform: translateY(-2px); }
+    .hero-price-note { margin-top: 12px; font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+    .hero-image-wrap { position: relative; }
+    .hero-image-wrap::before { content: ''; position: absolute; inset: -10px; border: 1.5px solid rgba(245,166,35,0.35); border-radius: 16px; pointer-events: none; }
+    .hero-image-wrap img { width: 100%; border-radius: 12px; display: block; position: relative; z-index: 1; }
+    .hero-fallback { width: 100%; aspect-ratio: 3/4; border-radius: 12px; background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; position: relative; z-index: 1; }
+    .hero-fallback .num { font-family: var(--font-head); font-size: 6rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .hero-fallback .lbl { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.12em; text-align: center; padding: 0 20px; }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--gold); padding: 13px 24px; display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 7px; font-family: var(--font-head); font-size: 0.8rem; font-weight: 700; color: var(--black); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* SECTIONS */
+    .section { max-width: 860px; margin: 0 auto; padding: 72px 24px; }
+    .section-label { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .section-title { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .divider { width: 44px; height: 4px; background: var(--gold); border-radius: 2px; margin-bottom: 32px; }
+    .bg-white { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    /* PAIN */
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 28px; }
+    .pain-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; display: flex; gap: 12px; align-items: flex-start; transition: box-shadow 0.2s; }
+    .pain-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); }
+    .pain-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+    .pain-text { font-size: 0.92rem; color: #374151; line-height: 1.5; }
+    .pain-conclusion { margin-top: 28px; background: var(--black); color: var(--white); border-radius: 12px; padding: 26px 30px; font-size: 1.08rem; line-height: 1.75; }
+    .pain-conclusion strong { color: var(--gold); }
+
+    /* FEATURES */
+    .features-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .feature-item { display: flex; align-items: flex-start; gap: 14px; padding: 15px 18px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; font-size: 0.95rem; transition: border-color 0.2s; }
+    .feature-item:hover { border-color: var(--gold); }
+    .check-icon { width: 20px; height: 20px; border-radius: 50%; background: var(--green); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; font-weight: 700; margin-top: 2px; }
+
+    /* TRANSFORM */
+    .transform-wrap { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: start; }
+    .transform-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--gold); padding-top: 44px; }
+    .transform-col { background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+    .transform-col-header { padding: 13px 18px; font-family: var(--font-head); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .before-col .transform-col-header { background: #fff5f5; color: var(--red); }
+    .after-col .transform-col-header  { background: #f0fdf4; color: #166534; }
+    .transform-items { padding: 14px 18px; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .transform-items li { font-size: 0.9rem; display: flex; align-items: flex-start; gap: 10px; color: #374151; }
+
+    /* STEPS */
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0; position: relative; }
+    .steps-list::before { content: ''; position: absolute; left: 19px; top: 24px; bottom: 24px; width: 2px; background: var(--border); }
+    .step-item { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; }
+    .step-num { width: 40px; height: 40px; background: var(--black); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-weight: 800; font-size: 1rem; flex-shrink: 0; position: relative; z-index: 1; }
+    .step-content strong { display: block; font-size: 0.98rem; font-weight: 600; margin-bottom: 4px; }
+    .step-content p { font-size: 0.88rem; color: var(--gray); }
+
+    /* BONUS */
+    .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .bonus-card { background: linear-gradient(135deg, #fffbeb 0%, #fef9c3 100%); border: 1.5px solid #fbbf24; border-radius: 12px; padding: 22px; }
+    .bonus-tag { display: inline-block; background: var(--gold); color: var(--black); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; margin-bottom: 10px; }
+    .bonus-card h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin-bottom: 7px; }
+    .bonus-card p { font-size: 0.88rem; color: #78350f; line-height: 1.5; }
+
+    /* WHO */
+    .for-not-for { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .for-col { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .for-col-header { padding: 12px 18px; font-family: var(--font-head); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .for-yes .for-col-header { background: #f0fdf4; color: #166534; }
+    .for-no  .for-col-header { background: #fff5f5; color: var(--red); }
+    .for-col ul { list-style: none; padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; }
+    .for-col li { font-size: 0.9rem; display: flex; align-items: flex-start; gap: 10px; color: #374151; }
+
+    /* PRICING */
+    .pricing-box { background: var(--black); color: var(--white); border-radius: 16px; padding: 48px 40px; text-align: center; position: relative; overflow: hidden; }
+    .pricing-box::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 400px; height: 300px; background: radial-gradient(circle, rgba(245,166,35,0.18) 0%, transparent 70%); pointer-events: none; }
+    .pricing-eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; position: relative; }
+    .pricing-amount { font-family: var(--font-head); font-size: clamp(3rem, 8vw, 5rem); font-weight: 800; line-height: 1; color: var(--white); position: relative; }
+    .pricing-amount sup { font-size: 1.8rem; vertical-align: super; color: var(--gold); }
+    .pricing-desc { margin-top: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.5); position: relative; }
+    .pricing-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--black); font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; padding: 18px 48px; border-radius: 8px; text-decoration: none; margin-top: 28px; transition: background 0.2s, transform 0.15s; position: relative; }
+    .pricing-cta:hover { background: var(--gold-dk); transform: translateY(-2px); }
+    .payment-info { margin-top: 26px; padding: 18px 22px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; font-size: 0.86rem; color: rgba(255,255,255,0.6); line-height: 1.9; position: relative; }
+    .payment-info strong { color: var(--gold); }
+
+    /* CLOSING */
+    .closing-section { background: var(--black); color: var(--white); padding: 80px 24px; text-align: center; }
+    .closing-inner { max-width: 620px; margin: 0 auto; }
+    .closing-inner .section-title { color: var(--white); }
+    .closing-inner p { font-size: 1rem; color: rgba(255,255,255,0.6); margin: 16px 0 32px; line-height: 1.75; }
+
+    /* FOOTER */
+    footer { background: #050505; color: rgba(255,255,255,0.25); text-align: center; padding: 22px; font-size: 0.78rem; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-content > * { animation: fadeUp 0.6s ease both; }
+    .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.45s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; padding: 56px 20px 44px; gap: 36px; }
+      .hero-image-wrap { order: -1; max-width: 260px; margin: 0 auto; }
+      .transform-wrap { grid-template-columns: 1fr; }
+      .transform-arrow { display: none; }
+      .for-not-for { grid-template-columns: 1fr; }
+      .trust-bar { gap: 16px; }
+      .pricing-box { padding: 36px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">🔥 For Students &amp; Beginners</div>
+        <h1>Stop Waiting for Motivation.<br><em>Build a System</em> That Works Without It.</h1>
+        <p class="hero-sub">
+          A beginner-friendly 7-day guide para sa mga laging nagpo-procrastinate, walang routine, at hirap maging consistent — kahit wala kang gana.
+        </p>
+        <div>
+          <a href="form.html" class="hero-cta">GET INSTANT ACCESS →</a>
+          <p class="hero-price-note">One-time payment · Only ₱297 · Digital download</p>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="7-day system.jpg" alt="7-Day No-Motivation Discipline System"
+             onerror="this.style.display='none';document.getElementById('hf').style.display='flex'">
+        <div class="hero-fallback" id="hf" style="display:none">
+          <span class="num">7</span>
+          <span class="lbl">Day Discipline System</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">✦ Beginner Friendly</div>
+    <div class="trust-item">✦ Instant Digital Access</div>
+    <div class="trust-item">✦ No Fluff. Just System.</div>
+    <div class="trust-item">✦ Works Kahit Tinatamad Ka</div>
+  </div>
+
+  <!-- PAIN POINTS -->
+  <div class="section">
+    <span class="section-label">Sound Familiar?</span>
+    <h2 class="section-title">Nakakarelate ka ba dito?</h2>
+    <div class="divider"></div>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-icon">😩</div><p class="pain-text">Ang dami mong plano pero wala kang nasisimulan kahit oras na para magsimula</p></div>
+      <div class="pain-card"><div class="pain-icon">🔁</div><p class="pain-text">Motivated ka ngayon, tapos bukas parang nawala na lahat ng energy mo</p></div>
+      <div class="pain-card"><div class="pain-icon">📅</div><p class="pain-text">Laging sinasabi "start ako bukas" — pero hindi natutuloy kahit kailan</p></div>
+      <div class="pain-card"><div class="pain-icon">😔</div><p class="pain-text">Alam mong kailangan mo maging disciplined pero hindi mo alam kung paano</p></div>
+    </div>
+    <div class="pain-conclusion">
+      Hindi ka tamad. <strong>Wala ka lang system.</strong><br>
+      Most people think discipline comes from motivation — <strong>mali yan.</strong><br>
+      Motivation is temporary. <strong>A system is permanent.</strong>
+    </div>
+  </div>
+
+  <!-- WHAT YOU GET -->
+  <div class="bg-white">
+    <div class="section">
+      <span class="section-label">What's Inside</span>
+      <h2 class="section-title">Everything You'll Get</h2>
+      <div class="divider"></div>
+      <ul class="features-list">
+        <li class="feature-item"><div class="check-icon">✓</div><span>Bakit ka laging inconsistent — at kung paano mo ito mafi-fix ngayon</span></li>
+        <li class="feature-item"><div class="check-icon">✓</div><span>The 3 simple rules to build real, lasting discipline</span></li>
+        <li class="feature-item"><div class="check-icon">✓</div><span>A clear daily system na madaling sundin kahit busy ka or pagod</span></li>
+        <li class="feature-item"><div class="check-icon">✓</div><span>How to start taking action kahit tinatamad ka — zero motivation needed</span></li>
+        <li class="feature-item"><div class="check-icon">✓</div><span>A reset method para hindi ka mawala sa track kapag nawalan ng momentum</span></li>
+        <li class="feature-item"><div class="check-icon">✓</div><span>A printable consistency tracker para makita mo ang progress mo every single day</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TRANSFORMATION -->
+  <div class="section">
+    <span class="section-label">The Shift</span>
+    <h2 class="section-title">Before &amp; After</h2>
+    <div class="divider"></div>
+    <div class="transform-wrap">
+      <div class="transform-col before-col">
+        <div class="transform-col-header">❌ Before</div>
+        <ul class="transform-items">
+          <li><span>❌</span><span>Laging nagpoprocrastinate, walang nagagawa</span></li>
+          <li><span>❌</span><span>Walang routine, walang direksyon araw-araw</span></li>
+          <li><span>❌</span><span>Laging "bukas na lang" — hanggang hindi natutuloy</span></li>
+          <li><span>❌</span><span>Umaasa sa motivation na hindi dumadating</span></li>
+        </ul>
+      </div>
+      <div class="transform-arrow">→</div>
+      <div class="transform-col after-col">
+        <div class="transform-col-header">✅ After 7 Days</div>
+        <ul class="transform-items">
+          <li><span>✅</span><span>May solid daily system na hindi ka nag-iiisip pa</span></li>
+          <li><span>✅</span><span>Consistent ka kahit walang motivation — every single day</span></li>
+          <li><span>✅</span><span>In control ka sa iyong oras at energy</span></li>
+          <li><span>✅</span><span>Nagsisimula ka na kahit hindi ka pa handa</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="bg-white">
+    <div class="section">
+      <span class="section-label">Simple Process</span>
+      <h2 class="section-title">How It Works in 4 Steps</h2>
+      <div class="divider"></div>
+      <ol class="steps-list">
+        <li class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content"><strong>Understand why you're inconsistent</strong><p>Discover the real reason you keep failing — it's not laziness, it's the absence of a system.</p></div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content"><strong>Apply the 3-Rule Discipline System</strong><p>Three simple, non-negotiable rules that rewire how you approach your day.</p></div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content"><strong>Follow the daily routine</strong><p>A clear, structured routine na hindi overwhelming — designed para sa beginners.</p></div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content"><strong>Track your 7-day consistency</strong><p>Use the printable tracker to build momentum and see your progress grow every day.</p></div>
+        </li>
+      </ol>
+      <p style="margin-top:28px;font-size:0.95rem;color:var(--gray);font-style:italic;">That's it. Simple. No overwhelm. No complicated strategies.</p>
+    </div>
+  </div>
+
+  <!-- BONUSES -->
+  <div class="section">
+    <span class="section-label">Free Bonuses Included</span>
+    <h2 class="section-title">🎁 You're Also Getting These for Free</h2>
+    <div class="divider"></div>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-tag">Bonus #1 — Free</div>
+        <h3>7-Day Discipline Challenge</h3>
+        <p>A step-by-step challenge guide para ma-apply mo agad ang system — simula Day 1, walang guessing.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-tag">Bonus #2 — Free</div>
+        <h3>Printable Consistency Tracker</h3>
+        <p>I-print, i-check every day. Visual progress para lagi kang on track sa loob ng 7 days.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO IT'S FOR -->
+  <div class="bg-white">
+    <div class="section">
+      <span class="section-label">Is This For You?</span>
+      <h2 class="section-title">Who This Is (and Isn't) For</h2>
+      <div class="divider"></div>
+      <div class="for-not-for">
+        <div class="for-col for-yes">
+          <div class="for-col-header">✅ This Is For You If…</div>
+          <ul>
+            <li><span>✅</span><span>Student ka or beginner pa lang sa productivity</span></li>
+            <li><span>✅</span><span>Nahihirapan kang maging consistent sa kahit anong goal</span></li>
+            <li><span>✅</span><span>Gusto mo ng simple, actionable system</span></li>
+            <li><span>✅</span><span>Ready ka nang mag-take action kahit hindi ka pa fully ready</span></li>
+          </ul>
+        </div>
+        <div class="for-col for-no">
+          <div class="for-col-header">❌ This Is NOT For You If…</div>
+          <ul>
+            <li><span>❌</span><span>Looking ka for advanced productivity hacks</span></li>
+            <li><span>❌</span><span>Hindi ka willing mag-take action at sundin ang system</span></li>
+            <li><span>❌</span><span>Aasahan mong may magbabago kahit wala kang gagawin</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="section">
+    <span class="section-label">Get Access Today</span>
+    <h2 class="section-title">Simple, One-Time Price</h2>
+    <div class="divider"></div>
+    <div class="pricing-box">
+      <p class="pricing-eyebrow">7-Day No-Motivation Discipline System + 2 Free Bonuses</p>
+      <div class="pricing-amount"><sup>₱</sup>297</div>
+      <p class="pricing-desc">One-time payment · Instant digital access · No subscriptions</p>
+      <a href="form.html" class="pricing-cta">GET INSTANT ACCESS →</a>
+      <div class="payment-info">
+        <strong>📱 How to Pay:</strong><br>
+        Send via GCash / PayMaya to <strong>Jenny Lou Labrador — 09976888750</strong><br><br>
+        After paying, screenshot your receipt and fill out the order form.<br>
+        Your files or download link will be sent to your email shortly. 📧
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <section class="closing-section">
+    <div class="closing-inner">
+      <span class="section-label" style="color:var(--gold)">Final Word</span>
+      <h2 class="section-title">You Don't Need More Motivation.</h2>
+      <p>You need a system you can follow — kahit tinatamad ka, kahit busy ka, kahit hindi ka pa ready.<br><strong style="color:white">This is that system.</strong></p>
+      <a href="form.html" class="hero-cta">GET THE SYSTEM FOR ₱297 →</a>
+    </div>
+  </section>
+
+  <footer>© 2025 7-Day No-Motivation Discipline System · All rights reserved</footer>
+
+</body>
+</html>
